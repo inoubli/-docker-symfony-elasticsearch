@@ -1,0 +1,23 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    clients:
+        default:
+            host: elasticsearch
+            port: 9200
+#    serializer:                            #for auto-mapping instead of specifying properties one by one
+#        serializer: jms_serializer
+    indexes:
+        inoubli_elastic2:
+            types:
+                commande:
+#                    serializer:
+#                        groups: [elastic]
+                    properties:
+                        ref: ~
+                        date: ~
+                    persistence:
+                        # the driver can be orm, mongodb or phpcr
+                        driver: orm
+                        model: App\Entity\Commande
+                        provider: ~
+                        finder: ~

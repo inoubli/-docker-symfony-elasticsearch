@@ -1,0 +1,22 @@
+
+###> symfony/framework-bundle ###
+.data/
+apps/phpUnitTest/.env.local
+apps/phpUnitTest/.env.local.php
+apps/phpUnitTest/.env.*.local
+apps/phpUnitTest/config/secrets/prod/prod.decrypt.private.php
+apps/phpUnitTest/public/bundles/
+apps/phpUnitTest/var/*
+apps/phpUnitTest/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+apps/phpUnitTest/.phpunit
+apps/phpUnitTest/.phpunit.result.cache
+apps/phpUnitTest/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+apps/phpUnitTest/.web-server-pid
+###< symfony/web-server-bundle ###
+apps/phpUnitTest/debug.log
