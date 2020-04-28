@@ -1,6 +1,5 @@
-
+.data/db/*
 ###> symfony/framework-bundle ###
-.data/
 apps/phpUnitTest/.env.local
 apps/phpUnitTest/.env.local.php
 apps/phpUnitTest/.env.*.local
