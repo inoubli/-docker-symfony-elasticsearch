@@ -9,15 +9,27 @@ fos_elastica:
     indexes:
         inoubli_elastic2:
             types:
-                commande:
+                ligneCommande:
 #                    serializer:
 #                        groups: [elastic]
                     properties:
-                        ref: ~
-                        date: ~
+                        id: ~
+                        quantite: ~
+                        commande:
+                            type: "nested"
+                            properties:
+                                id: ~
+                                ref: ~
+                                date: ~
+                        produit:
+                            type: "nested"
+                            properties:
+                                id: ~
+                                name: ~
+                                ref: ~
+                                prix: ~
                     persistence:
-                        # the driver can be orm, mongodb or phpcr
                         driver: orm
-                        model: App\Entity\Commande
+                        model: App\Entity\LigneCommande
                         provider: ~
-                        finder: ~
+                        finder: ~                       

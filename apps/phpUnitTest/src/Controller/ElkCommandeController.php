@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Commande;
+use FOS\ElasticaBundle\Manager\RepositoryManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
