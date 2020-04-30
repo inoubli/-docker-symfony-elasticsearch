@@ -19,17 +19,22 @@ fos_elastica:
                             type: "nested"
                             properties:
                                 id: ~
-                                ref: ~
+                                ref: { boost: 3 }
                                 date: ~
                         produit:
                             type: "nested"
                             properties:
                                 id: ~
-                                name: ~
-                                ref: ~
+                                name: { boost: 5 }
+                                ref: { boost: 3 }
                                 prix: ~
                     persistence:
                         driver: orm
                         model: App\Entity\LigneCommande
                         provider: ~
-                        finder: ~                       
+                        finder: ~    
+                        # listener:
+                        #     insert: true
+                        #     update: false
+                        #     delete: true
+                   

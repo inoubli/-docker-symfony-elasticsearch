@@ -4,8 +4,7 @@
 namespace App\Controller;
 
 
-use App\Entity\Commande;
-use FOS\ElasticaBundle\Manager\RepositoryManager;
+use App\Entity\LigneCommande;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,16 +35,16 @@ class ElkCommandeController extends AbstractController
         //$finder = $this->container->get('fos_elastica.finder.inoubli_elastic.commande');      //in old versions of sf
 
         // Option 1. Returns all commandes who have 'newProject00event' in any of their mapped fields
-        $result1 = $this->finder->getRepository(Commande::class)->find('newProject00event');
+        $result1 = $this->finder->getRepository(LigneCommande::class)->find('70');  //where ligneCommande->quantite = 70
         //dd($result1);
 
         // Option 2. Returns a set of hybrid results that contain all Elasticsearch results
         // and their transformed counterparts. Each result is an instance of a HybridResult
-        $result2 = $this->finder->getRepository(Commande::class)->findHybrid('newProject00event');
+        $result2 = $this->finder->getRepository(LigneCommande::class)->findHybrid('70');
         dd($result2);
 
         // Option 3b. KnpPaginator resultset
-        $result3 = $this->finder->getRepository(Commande::class)->createPaginatorAdapter('newProject00event');
+        $result3 = $this->finder->getRepository(LigneCommande::class)->createPaginatorAdapter('70');
         $pagination = $paginator->paginate($result3, $page = 1, 2);
         // dd($result3);
         // dd($pagination);
